@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="../public/assets/global/plyr/plyr.css">
+
+    <div class="plyr__video-embed" id="promoPlayer">
+        <iframe height="500" src="https://www.youtube.com/watch?v=iTlsP6RfCQ8?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
+    </div>
+
+<script src="../public/assets/global/plyr/plyr.js"></script>
+<script>
+    "use strict";
+    var promoPlayer = new Plyr('#promoPlayer');
+</script>
+<script>
+    "use strict";
+    const myModalEl = document.getElementById('promoVideo')
+    myModalEl.addEventListener('hidden.bs.modal', event => {
+        promoPlayer.pause();
+        $('#promoVideo').toggleClass('in');
+    });
+    myModalEl.addEventListener('shown.bs.modal', event => {
+        promoPlayer.play();
+        $('#promoVideo').toggleClass('in');
+    });
+
+    
+</script>
